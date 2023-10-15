@@ -27,7 +27,7 @@ func <- function(x, tau)
   return(bet(x %*% rbind(bet1(tau),bet2(tau),bet3(tau),bet4(tau),bet5(tau))+bet0(tau),tau))
 }
 
-## the given covariate x to estimate its quantile curve
+# the given covariate x whose quantile curves are to be estimated
 X1 = c(0,1) # sex
 X2 = qnorm(0.5,28,2) # bmi
 X3 = qnorm(0.5,92.5,13) # waist
@@ -42,14 +42,17 @@ x3 = rnorm(n,92.5,13) # waist
 x4 = rnorm(n,80,12) # diastolic_bp
 x5 = rnorm(n,124,18.5) # systolic_bp
 x0 = rep(1,n)
+## the covariates of each sample
 X = cbind(x0,x1,x2,x3,x4,x5)
 u = runif(n)
 b = rbinom(n,1,p(x1,x2,x3,x4,x5))
 w = bet(bet1(u)*x1+bet2(u)*x2+bet3(u)*x3+bet4(u)*x4+bet5(u)*x5+bet0(u),u)
+## the simulated quantiles of each sample
 y = b*w
-# estimated quantile curve for the given covariate x
+
+# estimated quantile curves for the given covariate x
 A = proposed.nonsmooth.spline(y=y, Xl=cbind(x1,x2,x3,x4,x5), Xq=cbind(x0,x1,x2,x3,x4,x5), xl=X0, xq=cbind(1,X0), taus=seq(0, 0.99, by=0.01), delta=0.499, m = 4, u = rep(1/sqrt(6),6))
 
-# hypothesis testing for the covariate waist given the G_tau function, coeffecients beta_tau and gamma
+# hypothesis testing for the 3rd covariate waist given the samples
 Combination(y,X,m = 4,test_num = 4)
 
