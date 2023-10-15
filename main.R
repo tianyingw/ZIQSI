@@ -3,13 +3,14 @@
 set.seed(10001)
 n = 500 
 
-# the probability of Y>0 given covariate x
+# generate the true model for simulation
+## the probability of Y>0 given covariate x
 p = function(x1,x2,x3,x4,x5,gam0=-0.4,gam1=-0.480,gam2=-0.022,gam3=0.021,gam4 = 0.015,gam5 = -0.009){
   lc = gam0 + gam1*x1 + gam2*x2 + gam3*x3 + gam4*x4 + gam5*x5
   exp(lc)/(1+exp(lc))
 }
 
-# beta_tau
+## beta_tau
 bet1 = function(x){(0.3*sqrt(x)-x)*2}
 bet2 = function(x){x^2*2.2}
 bet3 = function(x){
@@ -20,13 +21,13 @@ bet4 = function(x){-sin(x*2*pi)*0.1}
 bet0 = function(x){-147.7*x-50*x^2-20}
 bet = function(x,u){x^4*u*10^(-5)/6+x^2*u*0.2/3}
 
-# G_tau function
+## G_tau function
 func <- function(x, tau)
 {
   return(bet(x %*% rbind(bet1(tau),bet2(tau),bet3(tau),bet4(tau),bet5(tau))+bet0(tau),tau))
 }
 
-# the given covariate x
+## the given covariate x to estimate its quantile curve
 X1 = c(0,1) # sex
 X2 = qnorm(0.5,28,2) # bmi
 X3 = qnorm(0.5,92.5,13) # waist
