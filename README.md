@@ -1,7 +1,7 @@
 # ZIQSI
 We provide a tool for fitting and doing hypothesis testing for zero-inflated microbiome data given covariates of interest.
 ## Description
-This R document provides a 
+This R document provides a novel zero-inflated semiparametric single-index quantile regression algorithm to predict the personal quantile curve for zero-inflated response with given samples. 
 ## Usage
 You first need to load "functions.R" and install R packages: "MASS", "aod", "lme4", "PearsonDS". We describe the data generation and how to conduct pseudo-simulation extrapolation method for given dataset in "main.R". After running the "main.R", you can obtain the estimated quantile curve for a set of given covariates, and the p-value for hypothesis testing.
 ## License
