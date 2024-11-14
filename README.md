@@ -86,7 +86,9 @@ X5 = qnorm(0.5, 124, 18.5) # systolic_bp
 X0 = cbind(c(rep(X1[1], 1), rep(X1[2], 1)), rep(X2, 2), rep(X3, 2), rep(X4, 2), rep(X5, 2))
 
 
-# Estimated quantiles for the given covariate sample 1, sample 2
+# Estimated quantiles for the given covariate sample 1, sample 2;
+## row names stand for sample i;
+## col names stand for the quantile levels
 A = proposed.nonsmooth.spline(y = y, Xl = cbind(x1, x2, x3, x4, x5),
 Xq = cbind(x0, x1, x2, x3, x4, x5),
 xl = X0,
@@ -95,7 +97,6 @@ taus = seq(0, 0.99, by = 0.01),
 delta = 0.499,
 m = 3,
 u = rep(1/sqrt(6), 6))
-rownames(A) = c("sample 1","sample 2")
 
 # Estimate the AQE at tau=0.5 for covariate bmi at the levels 23 and 28 given other covariates fixed
 # P_ZIQSI = AQE(y,X[,-1],X,indexl = 2, indexq = 3, value1 = 23, value2 = 28,
