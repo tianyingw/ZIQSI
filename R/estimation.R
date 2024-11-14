@@ -194,7 +194,9 @@ proposed.nonsmooth.spline = function(y, Xl, Xq, xl, xq, taus = seq(0,0.99,0.01),
 
   })
 
-  return(Quantiles=do.call(rbind, QF))
+  Quantiles=do.call(rbind, QF);
+  colnames(Quantiles) = taus;
+  return(Quantiles)
 
 }
 
