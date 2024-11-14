@@ -1,4 +1,4 @@
-# ZIQSI-package
+# ZIQSI
 
 ## Introduction
 The **ZIQSI** R package is designed to provide advanced statistical tools for quantile curve fitting and average quantile effect calculation. This package includes two main functions:
