@@ -1,0 +1,20 @@
+Package: ZIQSI
+Type: Package
+Title: ZIQSI package
+Version: 0.1.0
+Author: Zirui Wang and Tianying Wang
+Maintainer: Zirui Wang <wzr23@mails.tsinghua.edu.cn>
+Description: This R document provides a novel zero-inflated semiparametric single-index quantile regression algorithm to predict the personal quantile curve for zero-inflated response with given samples.
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+Depends:
+    R (>= 3.5.0),
+    MASS,
+    lme4 (>= 1.1-23),
+    quantreg,
+    stats
+Suggests:
+    aod,
+    PearsonDS
+RoxygenNote: 7.3.2

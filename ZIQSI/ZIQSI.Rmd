@@ -1,0 +1,26 @@
+---
+title: "Overview of the ZIQSI R Package"
+author: "吴未迟"
+output: html_document
+---
+
+## Introduction
+
+The **ZIQSI** R package is designed to provide advanced statistical tools for quantile curve fitting and average quantile effect calculation. This package includes two main functions:
+
+- `proposed.nonsmooth.spline`: A function for fitting a non-smooth spline to data.
+- `AQE`: A function for calculating average quantile effect based on input data and model.
+
+This document provides an overview of the package, how to install it, and examples of how to use these functions.
+
+## Installation
+
+To install the **ZIQSI** package from GitHub, you can use the following code:
+
+```{r}
+# If devtools is not already installed, install it first
+# install.packages("devtools")
+
+# Install the ZIQSI package from GitHub
+devtools::install_github("https://github.com/Levana996/ZIQSI_package")
+```
