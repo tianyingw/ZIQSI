@@ -93,7 +93,7 @@ xl = X0,
 xq = cbind(1, X0),
 taus = seq(0, 0.99, by = 0.01),
 delta = 0.499,
-m = 4,
+m = 3,
 u = rep(1/sqrt(6), 6))
 
 # Estimate the AQE at tau=0.5 for covariate bmi at the levels 23 and 28 given other covariates fixed
