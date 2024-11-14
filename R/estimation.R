@@ -196,6 +196,9 @@ proposed.nonsmooth.spline = function(y, Xl, Xq, xl, xq, taus = seq(0,0.99,0.01),
 
   Quantiles=do.call(rbind, QF);
   colnames(Quantiles) = taus;
+  ll = nrow(Quantiles)
+  sample_vector = paste("sample", seq(1, ll))
+  rownames(Quantiles) = sample_vector
   return(Quantiles)
 
 }
